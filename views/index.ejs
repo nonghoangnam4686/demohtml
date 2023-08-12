@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+    <style>
+        button {
+            padding: 0;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: inherit;
+            }
+
+            .my-button {
+            display: inline-block; 
+            background-color: #007bff; 
+            color: #fff;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 2px solid #007bff; 
+            }
+
+            .my-button:hover {
+            background-color: #0056b3; 
+            }
+            .button-container {
+            display: flex;
+            justify-content: space-between;
+            }
+
+            .button {
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+	</style> 
+    
+
+</head>
+<body>
+    
+    <ul>
+        <center>
+            <img src="/images/demo.jpeg">
+        </center>
+
+        <center>
+            <h1>DEMO SEARCH BAR</h1>
+            <h1>This is the list of Users from database</h1>
+            <% users.forEach(user => { %>
+                <li>
+                    <strong>Name:</strong> <%= user.name %> | 
+                    <strong>Email:</strong> <%= user.email %>
+                </li>
+            <% }); %>
+        </center>
+        
+        <br>
+        <center>
+            <div class="my-button">
+              <button onclick="redirectToSearch()">Go to Search</button>
+            </div>
+        </center>
+
+        <center>
+            <br>
+            <div class="my-button">
+              <button onclick="redirectToRegister()">Register</button>
+            </div>
+        </center>
+
+            <br>
+            <div class="button-container">
+                <center>
+                    <button class="button" onclick="redirectToTXreport()">TX_report</button>
+                    <button class="button" onclick="redirectToCAreport()">CA_report</button>
+                </center>
+                
+            </div>
+        
+        <br>
+        <br>
+        <script>
+            function redirectToSearch() {
+                window.location.href = "/search";
+            }
+
+            function redirectToRegister(){
+                window.location.href = "/register";
+            }
+            function redirectToTXreport(){
+                window.location.href = "/TX_report";
+            }
+            function redirectToCAreport(){
+                window.location.href = "/CA_report";
+            }
+        </script>
+    </ul>
+</body>
+</html> 
